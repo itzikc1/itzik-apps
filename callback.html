@@ -1,4 +1,11 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TikTok login - Itzik Apps</title><style>body{font-family:-apple-system,Helvetica,Arial,sans-serif;max-width:720px;margin:40px auto;padding:0 16px;line-height:1.6}</style></head><body>
-<h1>Login finished</h1>
-<p>You can close this page and go back to the tool. This page does not store or send anything.</p>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TikTok login - Itzik Apps</title><style>body{font-family:-apple-system,Helvetica,Arial,sans-serif;max-width:720px;margin:40px auto;padding:0 16px;line-height:1.6}code{word-break:break-all;background:#f3f3f3;padding:2px 6px;border-radius:4px}</style></head><body>
+<p><a href="index.html">Itzik Apps</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></p>
+<h1>TikTok login finished</h1>
+<p id="msg">Waiting for TikTok…</p>
+<script>
+var p=new URLSearchParams(location.search),m=document.getElementById('msg');
+if(p.get('code')){m.innerHTML='Approved. Copy this code into the tool (it works once, for a few minutes):<br><code></code>';m.querySelector('code').textContent=p.get('code');}
+else if(p.get('error')){m.textContent='TikTok returned: '+p.get('error');}
+else{m.textContent='You can close this page.';}
+</script>
 </body></html>
